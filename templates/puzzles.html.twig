@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Puzzels{% endblock %}</title>
+    <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
+    {% include 'partials/includes.html.twig' %}
+</head>
+<body>
+{% block body %}
+    {% include 'partials/header.html.twig' with {activePage:'puzzles'} %}
+    <div class="container my-5 bg-dark rounded-3 overflow-hidden">
+        <div id="puzzles" class="row  row-cols-1 row-cols-lg-2 row-cols-xl-3 g-2 g-xl-3">
+            <div class="col p-3">
+                <div class="card">
+                    <img class="card-img-top img-responsive" src="{{ asset('assets/maze.png') }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Maze</h5>
+                        <p class="card-text">Guide your collegue safely through the maze</p>
+                    <a href="/mazepuzzle" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+</body>
+</html>
