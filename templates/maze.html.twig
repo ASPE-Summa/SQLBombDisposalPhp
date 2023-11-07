@@ -20,6 +20,28 @@
                     Guide your partner through the maze. Your partner cannot see obstacles. The database contains the
                     solutions to all mazes, but it is up to you to filter the right ones.
                 </p>
+                <strong>Legend:</strong>
+                <table class="table table-dark">
+                    <tr>
+                        <th>@</th>
+                        <td>This is the player.</td>
+                    </tr>
+                    <tr>
+                        <th>$</th>
+                        <td>This is the goal.</td>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                        <td>This is an empty space, the player can see these.</td>
+                    </tr>
+                    <tr>
+                        <th>#</th>
+                        <td>
+                            This is a trap space. The player <span style="text-decoration: underline; font-weight: bold">CAN NOT</span> see these.
+                            If the player hits one, the maze will reset and you will take a time penalty.
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="col-md-3">
                 <img class="img-fluid" src="{{ asset('assets/maze_schema.png') }}">
@@ -28,7 +50,6 @@
                 <div class="row">
                     <div class="col-md-6">
                         <form method="post">
-                            <div id="editor">some text</div>
                             <div class="form-group">
                                 <label for="query" class="text-light">Enter your query here</label>
                                 {% if query is defined %}
