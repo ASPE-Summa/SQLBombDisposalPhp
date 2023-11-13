@@ -12,10 +12,15 @@
     <div class="container my-5 bg-dark rounded-3 overflow-hidden">
         <div class="row mt-2 g-2">
             <div class="col-md-3">
-                <img class="img-fluid" src="{{ asset('assets/placeholder.png') }}">
+                <img class="img-fluid" src="{{ asset('assets/buttons.png') }}">
             </div>
             <div class="col-md-6">
-                <p class="lead text-light">Subjects: SELECT, WHERE, IN & JOIN</p>
+                <p class="lead text-light">Subjects:
+                    <a href="https://www.w3schools.com/mysql/mysql_select.asp" target="_blank">SELECT</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_where.asp" target="_blank">WHERE</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_in.asp" target="_blank">IN</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_join_inner.asp" target="_blank">JOIN</a>
+                </p>
                 <p class="text-light">
                     Find out which buttons your partner has in front of them and find those buttons in the database.
                     Then figure out which how many volts are connected to each button.
@@ -36,7 +41,7 @@
                                 {% if query is defined %}
                                     <textarea id="query" name="query" class="form-control" required>{{ query }}</textarea>
                                 {% else %}
-                                    <textarea id="query" name="query" class="form-control" placeholder="SELECT * FROM maze_puzzle" required></textarea>
+                                    <textarea id="query" name="query" class="form-control" placeholder="SELECT * FROM button" required></textarea>
                                 {% endif %}
                             </div>
                             <input class="btn btn-light mt-2" type="submit">
