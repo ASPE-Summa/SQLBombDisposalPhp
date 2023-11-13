@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Puzzels{% endblock %}</title>
+    <title>{% block title %}Maze Puzzle{% endblock %}</title>
     <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
     {% include 'partials/includes.html.twig' %}
 </head>
@@ -15,12 +15,16 @@
                 <img class="img-fluid" src="{{ asset('assets/maze.png') }}">
             </div>
             <div class="col-md-6">
-                <p class="lead text-light">Subjects: SELECT, WHERE and ORDER</p>
+                <p class="lead text-light">Subjects:
+                    <a href="https://www.w3schools.com/mysql/mysql_select.asp" target="_blank">SELECT</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_where.asp" target="_blank">WHERE</a> and
+                    <a href="https://www.w3schools.com/mysql/mysql_orderby.asp" target="_blank">ORDER BY</a>
+                </p>
                 <p class="text-light">
                     Guide your partner through the maze. Your partner cannot see obstacles. The database contains the
                     solutions to all mazes, but it is up to you to filter the right ones.
                 </p>
-                <strong>Legend:</strong>
+                <strong class="text-light">Legend:</strong>
                 <table class="table table-dark">
                     <tr>
                         <th>@</th>
