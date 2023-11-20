@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Puzzels{% endblock %}</title>
+    <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
+    {% include 'partials/includes.html.twig' %}
+</head>
+<body>
+{% block body %}
+    {% include 'partials/header.html.twig' with {activePage:'button'} %}
+    <div class="container my-5 bg-dark rounded-3 overflow-hidden">
+        <div class="row mt-2 g-2">
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ asset('assets/placeholder.png') }}">
+            </div>
+            <div class="col-md-6">
+                <p class="lead text-light">Subjects:
+                    <a href="https://www.w3schools.com/mysql/mysql_select.asp" target="_blank">SELECT</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_where.asp" target="_blank">WHERE</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_like.asp" target="_blank">LIKE</a>
+                </p>
+                <p class="text-light">
+                    Find the solution containing the three words your teammate will give you using the description column and a LIKE operator in your query,
+                    and tell your teammate the correct coördinates to strike.
+                </p>
+                <p class="text-light">
+                    Text overflow on the text column has been disabled to prevent you from peeking :)
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-fluid" src="{{ asset('assets/placeholder.png') }}">
+            </div>
+            <div class="col mt-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="query" class="text-light">Enter your query here</label>
+                                {% if query is defined %}
+                                    <textarea id="query" name="query" class="form-control" required>{{ query }}</textarea>
+                                {% else %}
+                                    <textarea id="query" name="query" class="form-control" placeholder="SELECT * FROM battleship" required></textarea>
+                                {% endif %}
+                            </div>
+                            <input class="btn btn-light mt-2" type="submit">
+                        </form>
+                        {% if queryException is defined %}
+                        <p class="text-danger">{{ queryException }}</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-dark">
+                            <thead class="thead">
+                            <tr>
+                                {% for key in puzzleRows|first|keys %}
+                                    <td>{{ key }}</td>
+                                {% endfor %}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for row in puzzleRows %}
+                                <tr>
+                                    {% for column in row %}
+                                        <td>{{ column|u.truncate(50, '...') }}</td>
+                                    {% endfor %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -17,7 +17,7 @@ use Symfony\Component\Routing\Annotation\Route;
 final class MazePuzzleController extends AbstractController
 {
     #[Route('/mazepuzzle')]
-    public function mazepuzzle(Request $request, EntityManagerInterface $userEntityManager): Response
+    public function mazePuzzle(Request $request, EntityManagerInterface $userEntityManager): Response
     {
         if ($request->isMethod("POST")) {
             /**
