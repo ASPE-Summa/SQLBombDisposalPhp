@@ -13,6 +13,9 @@ class Button
     private ?int $id = null;
 
     #[ORM\Column(length: 200)]
+    private ?string $emoji = null;
+
+    #[ORM\Column(length: 200)]
     private ?string $name = null;
 
     #[ORM\OneToOne(mappedBy: 'button', targetEntity: ButtonVoltage::class)]
@@ -44,6 +47,17 @@ class Button
     {
         $this->buttonVoltage = $buttonVoltage;
 
+        return $this;
+    }
+
+    public function getEmoji(): ?string
+    {
+        return $this->emoji;
+    }
+
+    public function setEmoji(?string $emoji): Button
+    {
+        $this->emoji = $emoji;
         return $this;
     }
 }
