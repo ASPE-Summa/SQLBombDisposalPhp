@@ -42,6 +42,7 @@ final class Version20231120121723 extends AbstractMigration
 
     public function down(Schema $schema): void
     {
+        $this->addSql('TRUNCATE battleship');
         // this down() migration is auto-generated, please modify it to your needs
 
     }
