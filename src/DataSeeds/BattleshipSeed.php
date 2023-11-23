@@ -35,10 +35,4 @@ Fusce accumsan eros et eros malesuada, sit amet hendrerit lorem cursus. Suspendi
     public static function getWordArray(){
         return explode(' ', self::LIPSUM);
     }
-    public static function shufflePatterns(): array
-    {
-        $shuffled = self::PATTERNS;
-        shuffle($shuffled);
-        return $shuffled;
-    }
 }
