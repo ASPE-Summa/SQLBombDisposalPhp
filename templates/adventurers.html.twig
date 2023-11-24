@@ -12,14 +12,14 @@
     <div class="container my-5 bg-dark rounded-3 overflow-hidden">
         <div class="row mt-2 g-2">
             <div class="col-md-3">
-                <img class="img-fluid" src="{{ asset('assets/placeholder.png') }}">
+                <img class="img-fluid" src="{{ asset('assets/adventurer.png') }}">
             </div>
             <div class="col-md-6">
                 <p class="lead text-light">Subjects:
                     <a href="https://www.w3schools.com/mysql/mysql_select.asp" target="_blank">SELECT</a>,
                     <a href="https://www.w3schools.com/mysql/mysql_where.asp" target="_blank">WHERE</a>,
-                    <a href="https://www.w3schools.com/mysql/mysql_like.asp" target="_blank">LIKE</a>,
-                    <a href="https://www.w3schools.com/mysql/mysql_and_or.asp" target="_blank">AND</a>
+                    <a href="https://www.w3schools.com/mysql/mysql_min_max.asp" target="_blank">MIN / MAX</a>,
+                    <a href="https://www.w3schools.com/mysql/mysql_count_avg_sum.asp" target="_blank">COUNT / AVG / SUM</a>,
                 </p>
                 <p class="text-light">
                     To solve this puzzle you must answer a question. Use scalar functions such as MIN, MAX, COUNT, AVG and SUM with the data about a tavern
@@ -27,18 +27,18 @@
                 </p>
             </div>
             <div class="col-md-3">
-                <img class="img-fluid" src="{{ asset('assets/placeholder.png') }}">
+                <img class="img-fluid" src="{{ asset('assets/adventurer_schema.png') }}">
             </div>
             <div class="col mt-5">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <form method="post">
                             <div class="form-group">
                                 <label for="query" class="text-light">Enter your query here</label>
                                 {% if query is defined %}
                                     <textarea id="query" name="query" class="form-control" required>{{ query }}</textarea>
                                 {% else %}
-                                    <textarea id="query" name="query" class="form-control" placeholder="SELECT * FROM adventurer" required></textarea>
+                                    <textarea id="query" name="query" class="form-control" placeholder="SELECT * FROM adventurers" required></textarea>
                                 {% endif %}
                             </div>
                             <input class="btn btn-light mt-2" type="submit">
@@ -47,7 +47,7 @@
                         <p class="text-danger">{{ queryException }}</p>
                         {% endif %}
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <table class="table table-dark">
                             <thead class="thead">
                             <tr>
