@@ -6,11 +6,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-{#            <ul class="navbar-nav">#}
-{#                <li class="nav-item">#}
-{#                    <a class="nav-link {% if activePage == 'articles' %}active{% endif %}" href="/">Artikelen</a>#}
-{#                </li>#}
-{#            </ul>#}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link {% if activePage == 'home' %}active{% endif %}" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if activePage == 'puzzles' %}active{% endif %}" href="/puzzles">Puzzels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if activePage == 'download' %}active{% endif %}" href="/download">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if activePage == 'teacher' %}active{% endif %}" href="/teacher">Teacher</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
