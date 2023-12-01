@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SQL Bomb Disposal{% endblock %}</title>
+    <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
+    {% include 'partials/includes.html.twig' %}
+</head>
+<body>
+{% block body %}
+    {% include 'partials/header.html.twig' with {activePage:'teacher'} %}
+    <div class="container my-5 bg-dark rounded-3 overflow-hidden">
+        <h1 class="text-light">Teaching Guide</h1>
+        <p class="text-light">
+            This application is intended to be used as a first introduction to SQL for the students.
+            Instead of telling them about SQL first (deductive learning) introduce a problem to them,
+            and guide them to find the solutions themselves (inductive learning).
+
+            The learning goals of this application are as follows:
+        </p>
+        <h2 class="text-light">Learning goals</h2>
+        <ul class="text-light">
+            <li>The learner is able to build a SELECT statement on one or more tables and filter results using WHERE conditions</li>
+            <li>The learner is able to use INNER JOIN statemetns to link two or more tables together and show the output using a SELECT statement</li>
+            <li>The learner is able to use aggregate functions such as MIN/MAX, AVG, SUM and COUNT to perform calculations</li>
+        </ul>
+
+        <h2 class="text-light">Lesson Plan</h2>
+        <p class="lead text-light">estimated duration: 1-2 hours</p>
+        <p class="text-light">
+            Have the students form pairs and place them opposite one another. One of them should have the website open, the other the desktop application.
+            By communicating with one another, the student with the website should help the other player to solve the problems they encounter.
+            In this initial round, the amount of time should be 5 minutes and the amount of puzzles 3.
+            <br/>
+            Since they have no prior experience with SQL, they will inevitably fail. At which point it is important to evaluate with the entire group.
+            Some students may have been able to solve a single puzzle, have them share their experiences and allow them to formulate a new strategy. Then, try again.
+            <br/>
+            After another, hopefully more successful, round evaluate once more. And have them try one final time with the current setup. After which the students should switch applications.
+            Once six rounds total have passed, allow the students to experiment freely with the applications, allowing them to adjust parameters as they wish and figure out puzzles of their own volition.
+        </p>
+        <h2 class="text-light">Evaluation</h2>
+        <p class="text-light">
+            After the students have played the game for a while, to evaluate whether they have accomplished  the learning goals set out by this excersise, evaluate with an informal test.
+        </p>
+    </div>
+{% endblock %}
+</body>
+</html>

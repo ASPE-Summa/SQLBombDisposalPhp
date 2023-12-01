@@ -6,11 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-final class PuzzleController extends AbstractController
+final class DownloadController extends AbstractController
 {
-    #[Route('/puzzles')]
-    public function puzzleOverview(): Response
+    #[Route('/download')]
+    public function home(): Response
     {
-        return $this->render('puzzles.html.twig');
+        return $this->render('download.html.twig');
     }
 }
