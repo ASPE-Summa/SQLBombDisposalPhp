@@ -1,1 +1,11 @@
+a{
+    color: limegreen;
+}
 
+a:visited{
+    color: green;
+}
+
+a:hover{
+    color: lightgreen;
+}
