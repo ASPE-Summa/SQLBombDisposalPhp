@@ -9,10 +9,10 @@
 <body>
 {% block body %}
     {% include 'partials/header.html.twig' with {activePage:'download'} %}
-    <div class="container my-5 bg-dark rounded-3 overflow-hidden">
-        <h1 class="text-light">403 : Forbidden</h1>
+    <div class="container mt-5 bg-dark rounded-3 overflow-hidden">
+        <h2 class="text-light">403 : Forbidden</h2>
         <p class="text-light">I see you are trying to edit my database in some way</p>
-        <img class="img-responsive mb-5" style="width: 100%;" src="{{ asset('assets/howboutno.gif') }}"/>
+        <img class="img-responsive mb-1" style="width: 100%;" src="{{ asset('assets/howboutno.gif') }}"/>
     </div>
 {% endblock %}
 </body>
