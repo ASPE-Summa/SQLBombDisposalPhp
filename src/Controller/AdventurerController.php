@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\MazePuzzleRepository;
-use Doctrine\DBAL\ConnectionException;
+use Doctrine\DBAL\Exception\ConnectionException;
 use Doctrine\DBAL\Exception\InvalidFieldNameException;
 use Doctrine\DBAL\Exception\SyntaxErrorException;
 use Doctrine\DBAL\Exception\TableNotFoundException;

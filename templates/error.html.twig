@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SQL Bomb Disposal{% endblock %}</title>
+    <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
+    {% include 'partials/includes.html.twig' %}
+</head>
+<body>
+{% block body %}
+    {% include 'partials/header.html.twig' with {activePage:'download'} %}
+    <div class="container my-5 bg-dark rounded-3 overflow-hidden">
+        <h1 class="text-light">403 : Forbidden</h1>
+        <p class="text-light">I see you are trying to edit my database in some way</p>
+        <img class="img-responsive mb-5" style="width: 100%;" src="{{ asset('assets/howboutno.gif') }}"/>
+    </div>
+{% endblock %}
+</body>
+</html>

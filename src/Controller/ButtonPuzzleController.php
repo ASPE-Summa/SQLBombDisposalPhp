@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\MazePuzzleRepository;
-use Doctrine\DBAL\ConnectionException;
+use Doctrine\DBAL\Exception\ConnectionException;
 use Doctrine\DBAL\Exception\InvalidFieldNameException;
 use Doctrine\DBAL\Exception\SyntaxErrorException;
 use Doctrine\DBAL\Exception\TableNotFoundException;
@@ -29,12 +28,12 @@ final class ButtonPuzzleController extends AbstractController
             try{
                 $puzzleRows = $userEntityManager->getConnection()->executeQuery($query)->fetchAllAssociative();
                 return $this->render('button.html.twig', ['puzzleRows' => $puzzleRows , 'query' => $request->get('query')]);
-
             }
             catch (ConnectionException $e){
                 return $this->render('error.html.twig');
             }
             catch (QueryException|TableNotFoundException|InvalidFieldNameException|SyntaxErrorException $e){
+                dd($e);
                 return $this->render('button.html.twig', ['puzzleRows' => [], 'queryException' => $e->getMessage(), 'query' => $request->get('query')]);
             }
         }
