@@ -7,7 +7,9 @@ use Doctrine\DBAL\Exception\InvalidFieldNameException;
 use Doctrine\DBAL\Exception\SyntaxErrorException;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 use Doctrine\DBAL\Query\QueryException;
+use Doctrine\DBAL\Schema\Exception\ColumnDoesNotExist;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Tools\Exception\MissingColumnException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,7 +35,7 @@ final class BattleshipPuzzleController extends AbstractController
             catch (ConnectionException $e){
                 return $this->render('error.html.twig');
             }
-            catch (QueryException|TableNotFoundException|InvalidFieldNameException|SyntaxErrorException $e){
+            catch (QueryException|TableNotFoundException|InvalidFieldNameException|SyntaxErrorException|ColumnDoesNotExist $e){
                 return $this->render('battleship.html.twig', ['puzzleRows' => [], 'queryException' => $e->getMessage(), 'query' => $request->get('query')]);
             }
         }

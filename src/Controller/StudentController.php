@@ -7,6 +7,7 @@ use Doctrine\DBAL\Exception\InvalidFieldNameException;
 use Doctrine\DBAL\Exception\SyntaxErrorException;
 use Doctrine\DBAL\Exception\TableNotFoundException;
 use Doctrine\DBAL\Query\QueryException;
+use Doctrine\DBAL\Schema\Exception\ColumnDoesNotExist;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -33,7 +34,7 @@ final class StudentController extends AbstractController
             catch (ConnectionException $e){
                 return $this->render('error.html.twig');
             }
-            catch (QueryException|TableNotFoundException|InvalidFieldNameException|SyntaxErrorException $e){
+            catch (QueryException|TableNotFoundException|InvalidFieldNameException|SyntaxErrorException|ColumnDoesNotExist $e){
                 return $this->render('students.html.twig', ['puzzleRows' => [], 'queryException' => $e->getMessage(), 'query' => $request->get('query')]);
             }
         }
