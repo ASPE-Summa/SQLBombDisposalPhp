@@ -25,6 +25,7 @@ final class MazePuzzleController extends AbstractController
              * throw a ConnectionException
              */
 
+
             $query = $request->get('query');
             try{
                 $puzzleRows = $userEntityManager->getConnection()->executeQuery($query)->fetchAllAssociative();

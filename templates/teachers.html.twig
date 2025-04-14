@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>{% block title %}SQL Bomb Disposal{% endblock %}</title>
     <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     {% include 'partials/includes.html.twig' %}
 </head>
 <body>
 {% block body %}
     {% include 'partials/header.html.twig' with {activePage:'teacher'} %}
     <div class="container my-5 bg-dark rounded-3 overflow-hidden">
-        <h1 class="text-light">Teaching Guide</h1>
+        <h1 class="text-light"><i class="fa fa-microchip"></i>Teaching Guide</h1>
         <p class="text-light">
             This application is intended to be used as a first introduction to SQL for the students.
             Instead of telling them about SQL first (deductive learning) introduce a problem to them,
