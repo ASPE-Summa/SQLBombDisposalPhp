@@ -4,7 +4,6 @@ namespace App\DataSeeds;
 
 final class StudentSeed
 {
-    private string $_henk = "";
     public const GRADES = [
         9 => 'ninth',
         10 => 'tenth',
