@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SQL Game v2 (Work in Progress){% endblock %}</title>
+    <link rel="icon" href="{{ asset('assets/favicon.ico') }}"/>
+    {% include 'partials/includes.html.twig' %}
+</head>
+<body>
+{% block body %}
+    {% include 'partials/header.html.twig' with {activePage:'download'} %}
+    <div class="container my-5 bg-dark rounded-3 overflow-hidden">
+        <p class="text-light">
+            After piloting the initial version of the game a couple of shortcomings were identified and a new version of the game was
+            created in an attempt to remedy these shortcomings. At the cost of a little bit of the 'game' element of the application.
+
+            <ul>
+            <li>Learners have no insight into their progress or current knowledge level.</li>
+            <li>The User interface leaves a lot to be desired.</li>
+            <li>Instructions on certain puzzles are unclear.</li>
+            <li>There is no way to learn baseline skills within the application.</li>
+            </ul>
+
+            While the learning paths in version 2 are relatively feature complete, not all the puzzles from version 1 have been ported over yet.
+            <a href="{{ asset('assets/SQL_Game_V0_6.zip') }}" target="_blank">Version 0.6 is available for download here</a>
+        </p>
+    </div>
+{% endblock %}
+</body>
+</html>
